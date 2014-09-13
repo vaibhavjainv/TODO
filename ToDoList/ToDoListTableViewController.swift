@@ -10,9 +10,16 @@ import UIKit
 
 class ToDoListTableViewController: UITableViewController {
 
+    var todoLists = [ToDoItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         println("Table View is loaded now.")
+        
+        loadInitData()
+        
+        println("My list so far = \(todoLists)")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,6 +37,12 @@ class ToDoListTableViewController: UITableViewController {
 
     @IBAction func unwindToSegue (segue : UIStoryboardSegue) {
         println("inside unwind")
+    }
+    
+    func loadInitData(){
+        todoLists.insert(ToDoItem(name: "Taks# 1"), atIndex: 0)
+        todoLists.insert(ToDoItem(name: "Taks# 2"), atIndex: 1)
+        todoLists.insert(ToDoItem(name: "Taks# 3"), atIndex: 2)
     }
     
     /*
