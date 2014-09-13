@@ -14,7 +14,7 @@ class AddToDoItem: UIViewController {
         super.viewDidLoad()
         println("TODO view is loaded now.")
         
-        var tdi = ToDoItem(name: "Wash Car ")
+        var tdi = ToDoItem(name: "Wash Car AA")
         
         println("my first todo item = \(tdi.toString())")
         
