@@ -45,15 +45,33 @@ class ToDoListTableViewController: UITableViewController {
         todoLists.insert(ToDoItem(name: "Taks# 3"), atIndex: 2)
     }
     
-    /*
+    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return todoLists.count
+    }
+    
+
+    
+    
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath) as UITableViewCell
+        
+        cell.textLabel.text = todoLists[indexPath.row].itemName
+        
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView!, didDeselectRowAtIndexPath indexPath: NSIndexPath!) {
+        println("Slectected index -> \(indexPath.row)")
+        todoLists[indexPath.row].toggleCompletion()
+    }
 
     /*
     // Override to support conditional editing of the table view.

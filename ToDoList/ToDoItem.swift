@@ -26,5 +26,9 @@ class ToDoItem: NSObject {
         
         return "TODO Object --> \(self.itemName), \(self.isDone), \(self.creationDate.descriptionWithLocale(NSLocale.currentLocale()))"
     }
+    
+    func toggleCompletion(){
+        isDone = !isDone
+    }
    
 }
