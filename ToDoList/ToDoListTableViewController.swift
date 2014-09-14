@@ -63,7 +63,16 @@ class ToDoListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath) as UITableViewCell
         
+
         cell.textLabel.text = todoLists[indexPath.row].itemName
+
+
+
+        if todoLists[indexPath.row].isDone {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }else{
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
         
         return cell
     }
