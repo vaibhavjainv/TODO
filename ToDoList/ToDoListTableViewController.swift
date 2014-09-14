@@ -40,9 +40,9 @@ class ToDoListTableViewController: UITableViewController {
     }
     
     func loadInitData(){
-        todoLists.insert(ToDoItem(name: "Taks# 1"), atIndex: 0)
-        todoLists.insert(ToDoItem(name: "Taks# 2"), atIndex: 1)
-        todoLists.insert(ToDoItem(name: "Taks# 3"), atIndex: 2)
+        todoLists.insert(ToDoItem(name: "Taks# 11"), atIndex: 0)
+        todoLists.insert(ToDoItem(name: "Taks# 12"), atIndex: 1)
+        todoLists.insert(ToDoItem(name: "Taks# 13"), atIndex: 2)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
