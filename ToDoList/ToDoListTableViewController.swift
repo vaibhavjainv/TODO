@@ -68,9 +68,18 @@ class ToDoListTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView!, didDeselectRowAtIndexPath indexPath: NSIndexPath!) {
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         println("Slectected index -> \(indexPath.row)")
+        
         todoLists[indexPath.row].toggleCompletion()
+
+        var myArr = [NSIndexPath]()
+        myArr.insert(indexPath, atIndex: 0)
+        tableView.reloadRowsAtIndexPaths(myArr, withRowAnimation: UITableViewRowAnimation.None)
+        
+        
+
     }
 
     /*
