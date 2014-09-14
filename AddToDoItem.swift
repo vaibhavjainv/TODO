@@ -9,15 +9,16 @@
 import UIKit
 
 class AddToDoItem: UIViewController {
+    
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var textField: UITextField!
+    
+    var newToDoItem: ToDoItem?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         println("TODO view is loaded now.")
-        
-        var tdi = ToDoItem(name: "Wash Car AA")
-        
-        println("my first todo item = \(tdi.toString())")
-        
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +28,21 @@ class AddToDoItem: UIViewController {
     }
    
    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        
+        
+        if (sender as? UIBarButtonItem != self.doneButton){
+            return
+        }
+        
+        
+        if(!self.textField.text.isEmpty){
+            self.newToDoItem = ToDoItem(name: self.textField.text)
+            self.newToDoItem?.isDone = false
+            //self.newToDoItem.creationDate = NSDate()
+            
+        }
+    }
 
     
 
