@@ -59,13 +59,13 @@ class ToDoListTableViewController: UITableViewController {
         todoLists.insert(ToDoItem(name: "Taks# 13"), atIndex: 2)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return todoLists.count
@@ -74,11 +74,11 @@ class ToDoListTableViewController: UITableViewController {
 
     
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath) as UITableViewCell
         
 
-        cell.textLabel.text = todoLists[indexPath.row].itemName
+        cell.textLabel?.text = todoLists[indexPath.row].itemName
 
 
 
@@ -92,7 +92,7 @@ class ToDoListTableViewController: UITableViewController {
     }
     
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("Slectected index -> \(indexPath.row)")
         
         todoLists[indexPath.row].toggleCompletion()
@@ -115,7 +115,7 @@ class ToDoListTableViewController: UITableViewController {
 
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         println("POKA")
         

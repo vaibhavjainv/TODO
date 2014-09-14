@@ -28,7 +28,7 @@ class AddToDoItem: UIViewController {
     }
    
    
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         
         if (sender as? UIBarButtonItem != self.doneButton){
