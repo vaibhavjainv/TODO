@@ -12,6 +12,20 @@ class ToDoListTableViewController: UITableViewController {
 
     var todoLists = [ToDoItem]()
     
+    
+    @IBOutlet weak var deleteAllButton: UIButton!
+    
+    @IBAction func deleteAllTouchUpInside() {
+        println("m here")
+        
+        self.todoLists.removeAll(keepCapacity: false)
+        self.tableView.reloadData()
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,6 +82,13 @@ class ToDoListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        
+        if todoLists.count == 0 {
+            deleteAllButton.hidden = true
+        }else{
+            deleteAllButton.hidden = false
+        }
+        
         return todoLists.count
     }
     
@@ -133,6 +154,8 @@ class ToDoListTableViewController: UITableViewController {
 //        }    
     }
     
+    
+    
 
     /*
     // Override to support rearranging the table view.
@@ -158,5 +181,7 @@ class ToDoListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
